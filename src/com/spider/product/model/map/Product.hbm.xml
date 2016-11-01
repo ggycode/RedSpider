@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.spider.product.model.Product" table="product" >
+		<id name="productId" type="java.lang.String">
+			<column name="product_id" length="40"/>
+		</id>
+		<property name="productName" type="java.lang.String">
+			<column name="product_name" length="50"/>
+		</property>
+		<property name="productDescription" type="java.lang.String">
+			<column name="product_description" length="2048"/>
+		</property>
+		<property name="resourceType" type="java.lang.String">
+			<column name="resource_type" length="20"/>
+		</property>
+		<property name="platformType" type="java.lang.String">
+			<column name="platform_type" length="40"/>
+		</property>
+		<property name="status" type="java.lang.String">
+			<column name="status" length="4"/>
+		</property>
+		<property name="tag" type="java.lang.String">
+			<column name="tag" length="20"/>
+		</property>
+		<property name="createDate" type="java.util.Date">
+			<column name="create_date"/>
+		</property>
+		<property name="releaseDate" type="java.util.Date">
+			<column name="release_date"/>
+		</property>
+		<property name="downDate" type="java.util.Date">
+			<column name="down_date"/>
+		</property>
+		<property name="quitDate" type="java.util.Date">
+			<column name="quit_date"/>
+		</property>
+		<property name="updateDate" type="java.util.Date">
+			<column name="update_date"/>
+		</property>
+	</class>
+</hibernate-mapping>

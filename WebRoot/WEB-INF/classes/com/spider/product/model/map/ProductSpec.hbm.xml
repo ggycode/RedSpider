@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.spider.product.model.ProductSpec" table="product_spec" >
+		<id name="specId" type="java.lang.String">
+			<column name="spec_id" length="40"/>
+		</id>
+		<property name="productId" type="java.lang.String">
+			<column name="product_id" length="40"/>
+		</property>
+		<property name="specName" type="java.lang.String">
+			<column name="spec_name" length="50"/>
+		</property>
+		<property name="specDescription" type="java.lang.String">
+			<column name="spec_description" length="2048"/>
+		</property>
+		<property name="status" type="java.lang.String">
+			<column name="status" length="4"/>
+		</property>
+		<property name="tag" type="java.lang.String">
+			<column name="tag" length="20"/>
+		</property>
+		<property name="createDate" type="java.util.Date">
+			<column name="create_date"/>
+		</property>
+		<property name="releaseDate" type="java.util.Date">
+			<column name="release_date"/>
+		</property>
+		<property name="downDate" type="java.util.Date">
+			<column name="down_date"/>
+		</property>
+		<property name="quitDate" type="java.util.Date">
+			<column name="quit_date"/>
+		</property>
+		<property name="updateDate" type="java.util.Date">
+			<column name="update_date"/>
+		</property>
+		<set name="productSpecValues" inverse="true" cascade="delete" lazy="false">
+            <key>
+                <column name="spec_id" length="40" />
+            </key>
+            <one-to-many class="com.spider.product.model.ProductSpecValue" />
+        </set>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+	 http://www.springframework.org/schema/security
+     http://www.springframework.org/schema/security/spring-security-3.0.xsd">
+	 
+	 <http auto-config="true">
+	 	<intercept-url pattern="/login.jsp" filters="none" />
+	 	<intercept-url pattern="/adminLte/**" filters="none" />
+	 	<intercept-url pattern="/font-awesome-4.5.0/**" filters="none" />
+	 	<intercept-url pattern="/bootstrap/**" filters="none" />
+	 	<intercept-url pattern="/media/**" filters="none" />
+	 	<intercept-url pattern="/assets/**" filters="none" />
+	 	<form-login login-page="/login.jsp"
+	 				authentication-failure-url="/login.jsp"
+	 				default-target-url="/home.do"
+                    always-use-default-target="true"/>
+        <logout invalidate-session="true" logout-url="" logout-success-url="/login.jsp" />
+        <remember-me key="redSpiderKey" token-validity-seconds="60"/>
+	 	
+	 	<intercept-url pattern="/workorder/add/workorders" filters="none"/>
+	 	<intercept-url pattern="/**" access="ROLE_ADMIN,ROLE_MANAGER,ROLE_USER"/>
+	 </http>
+	 
+	 <authentication-manager>
+	 	<authentication-provider user-service-ref="myUserDetailsService" >
+	 		<password-encoder ref="md5PasswordEncode" />  
+	 	</authentication-provider>
+	 </authentication-manager>
+	 
+	 <!--<jdbc-user-service id="userService" 
+	 	 data-source-ref="dataSource"
+	 	 users-by-username-query="select username,password,state from user where username=? and removed is null" 
+	 	 authorities-by-username-query="select username,role from user where username=? and removed is null"/>
+	 --><!--<user-service id="userService">
+		 <user name="admin" password="admin" authorities="ROLE_ADMIN"/>
+		 <user name="gaoguanyin" password="gaoguanyin" authorities="ROLE_MANAGER"/>
+	 </user-service>
+	
+--></beans:beans>

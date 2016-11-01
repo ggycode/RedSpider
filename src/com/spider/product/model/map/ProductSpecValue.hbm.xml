@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.spider.product.model.ProductSpecValue" table="product_spec_value" >
+		<id name="valueId" type="java.lang.String">
+			<column name="value_id" length="40"/>
+		</id>
+		<property name="attrName" type="java.lang.String">
+			<column name="attr_name" length="40"/>
+		</property>
+		<property name="attrValue" type="java.lang.String">
+			<column name="attr_value" length="100"/>
+		</property>
+		<many-to-one name="productSpec" class="com.spider.product.model.ProductSpec" fetch="select">
+            <column name="spec_id" length="40" />
+        </many-to-one>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.spider.workorder.model.WorkOrderBo" table="work_order" >
+		<id name="workOrderNo" type="java.lang.String">
+			<column name="work_order_no" length="40"/>
+		</id>
+		<property name="subOrderNo" type="java.lang.String">
+			<column name="sub_order_no" length="40"/>
+		</property>
+		<property name="orderNo" type="java.lang.String">
+			<column name="order_no" length="40"/>
+		</property>
+		<property name="userId" type="java.lang.String">
+			<column name="user_id" length="40"/>
+		</property>
+		<property name="type" type="java.lang.Integer">
+			<column name="type"/>
+		</property>
+		<property name="state" type="java.lang.Integer">
+			<column name="state"/>
+		</property>
+		<property name="retryNumber" type="java.lang.Integer">
+			<column name="retry_number"/>
+		</property>
+		<property name="resourcePoolId" type="java.lang.String">
+			<column name="resource_agent_id" length="40"/>
+		</property>
+		<property name="resourceId" type="java.lang.String">
+			<column name="resource_id" length="40"/>
+		</property>
+		<property name="resourceType" type="java.lang.String">
+			<column name="resource_type" length="40"/>
+		</property>
+		<property name="lease" type="java.lang.String">
+			<column name="lease" length="50"/>
+		</property>
+		<property name="action" type="java.lang.String">
+			<column name="action" length="40"/>
+		</property>
+		<property name="created" type="java.util.Date">
+			<column name="create_date"/>
+		</property>
+		<property name="updated" type="java.util.Date">
+			<column name="update_date"/>
+		</property>
+		<set name="workOrderProperties" inverse="true" cascade="delete">
+            <key>
+                <column name="work_order_no" length="40" />
+            </key>
+            <one-to-many class="com.spider.workorder.model.WorkOrderPropertyBo" />
+        </set>
+	</class>
+</hibernate-mapping>

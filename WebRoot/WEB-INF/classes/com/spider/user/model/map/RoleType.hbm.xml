@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.spider.user.model.RoleType" table="role_type" >
+		<id name="uuid" type="java.lang.String">
+			<column name="uuid" length="40"/>
+		</id>
+		<property name="roleType" type="java.lang.String">
+			<column name="role_type" length="40"/>
+		</property>
+		<property name="description" type="java.lang.String">
+			<column name="description" length="100"/>
+		</property>
+	</class>
+</hibernate-mapping>

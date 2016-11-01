@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:amq="http://activemq.apache.org/schema/core"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jms="http://www.springframework.org/schema/jms"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation=" http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans.xsd
+                            http://activemq.apache.org/schema/core
+       						http://activemq.apache.org/schema/core/activemq-core.xsd
+       						http://www.springframework.org/schema/context 
+	 						http://www.springframework.org/schema/context/spring-context.xsd
+	 						http://www.springframework.org/schema/jms
+       						http://www.springframework.org/schema/jms/spring-jms.xsd">
+      
+     <context:property-placeholder location="classpath:/spring.properties"/>
+     <amq:connectionFactory id="connectionFactory" brokerURL="tcp://${activemq.ip}:${activemq.port}" />  
+     
+     <bean id= "jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+     	<property name="connectionFactory" ref="connectionFactory"/>
+     </bean>
+     
+     <bean id="queueDestination" class="org.apache.activemq.command.ActiveMQQueue">  
+	    <constructor-arg>  <value>resource.excutetask</value>  </constructor-arg>  
+	</bean>  
+	
+	<bean id="testDestination" class="org.apache.activemq.command.ActiveMQQueue">  
+	    <constructor-arg>  <value>resource.test</value>  </constructor-arg>  
+	</bean>
+     
+     <bean id="resourceMq" class="com.spider.resource.mq.ResourceMQ" />
+     
+     <bean id="testMq" class="com.spider.resource.mq.TestMQ" />
+     
+     <bean id="jmsContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">  
+	    <property name="connectionFactory" ref="connectionFactory" />  
+	    <property name="destination" ref="queueDestination" />  
+	    <property name="messageListener" ref="resourceMq" />  
+	</bean> 
+	
+	<bean id="jmsContainerTest" class="org.springframework.jms.listener.DefaultMessageListenerContainer">  
+	    <property name="connectionFactory" ref="connectionFactory" />  
+	    <property name="destination" ref="testDestination" />  
+	    <property name="messageListener" ref="testMq" />  
+	</bean> 
+     
+    
+    
+    
+    
+    <!--<bean id="jmsConnectionFactoryExtend" class="org.springframework.jms.connection.CachingConnectionFactory">
+	   <constructor-arg ref="connectionFactory" />
+	   <property name="sessionCacheSize" value="100" />
+	 </bean>
+     -->
+     <!--    
+     <bean id="jmsListenerContainerFactory" class="org.springframework.jms.config.DefaultJmsListenerContainerFactory">
+        <property name="connectionFactory" ref="connectionFactory"/>
+    </bean>
+    -->
+</beans>
+

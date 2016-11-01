@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.spider.resource.model.AdapterTask" table="adapter_task" >
+		<id name="id" type="java.lang.String">
+			<column name="id" length="40"/>
+		</id>
+		<property name="resourceObjectId" type="java.lang.String">
+			<column name="resource_object_id" length="40"/>
+		</property>
+		<property name="taskName" type="java.lang.String">
+			<column name="task_name" length="32"/>
+		</property>
+		<property name="beanName" type="java.lang.String">
+			<column name="bean_name" length="64"/>
+		</property>
+		<property name="workOrderId" type="java.lang.String">
+			<column name="work_order_id" length="40"/>
+		</property>
+		<property name="workOrderContent" type="java.lang.String">
+			<column name="work_order_content"/>
+		</property>
+		<property name="flowId" type="java.lang.String">
+			<column name="flow_id" length="64"/>
+		</property>
+		<property name="flowTaskId" type="java.lang.String">
+			<column name="flow_task_id" length="64"/>
+		</property>
+		<property name="platformId" type="java.lang.String">
+			<column name="platform_id" length="32"/>
+		</property>
+		<property name="poolId" type="java.lang.String">
+			<column name="pool_id" length="80"/>
+		</property>
+		<property name="info" type="java.lang.String">
+			<column name="info" length="500"/>
+		</property>
+		<property name="status">
+			<type name="org.hibernate.type.EnumType">    
+				<param name="enumClass">com.spider.resource.model.StateEnum</param>            
+	            <param name="type">12</param>  
+            </type>
+		</property>
+		<property name="commandInfo" type="java.lang.String">
+			<column name="command_info"/>
+		</property>
+		<property name="commandProtocol" type="java.lang.String">
+			<column name="command_protocol" length="32"/>
+		</property>
+		<property name="result" type="java.lang.String">
+			<column name="result"/>
+		</property>
+	</class>
+</hibernate-mapping>

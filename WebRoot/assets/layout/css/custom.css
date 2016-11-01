@@ -1,0 +1,91 @@
+.box-primary .profile-sidebar{
+	float:left;	
+	margin: 10px 0 0 5px;
+}
+.box-primary .profile-sidebar .portlet .profile-usertitle{
+	text-align:center;
+}
+.box-primary .profile-content{
+	float:left;
+	margin: 10px 0 0 50px;
+	width:500px;
+}
+.portlet .portlet-title .caption .caption-subject{
+	font-size:15px;
+	font-weight:bold;
+}
+.portlet .portlet-title .actions{
+	float:right;
+}
+
+.portlet .portlet-body{
+	clear:both;
+}
+.portlet-body .form-horizontal .form-body .form-section{
+	font-size:18px;	
+}
+.portlet-body .form-horizontal .form-body .form-section{
+	font-size:15px;	
+}
+
+.form-group .control-label{
+	font-size:14px;
+	font-weight:normal;
+}
+
+.blue.btn {
+    border-radius: 5px !important;
+    background: #eea236;
+    color: #545454;
+    border: 1px solid #e5e5e5;
+}
+
+.btn {
+  border-width: 0;
+  padding: 7px 14px;
+  font-size: 14px;
+  outline: none !important;
+  background-image: none !important;
+  filter: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+#userform button {
+    border: 1px solid #e5e1e1;
+    max-width: 300px;
+    min-width: 120px;
+}
+
+.select2-offscreen, .select2-offscreen:focus {
+    border: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    outline: 0 !important;
+    left: 0px !important;
+    top: 0px !important;
+}
+
+.select2me {
+	width: 100%;
+	text-align: left;
+	border-radius: 4px !important;
+}
+
+.form-group {
+    overflow: hidden;
+}
+
+button.yellow {
+    color: #fff;
+    border: 1px solid #96a6d5;
+}
+
+button.yellow:hover {
+    background: #f27f6a !important;
+    color: #fff;
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.spider.resource.model.Platform" table="platform" >
+		<id name="id" type="java.lang.String">
+			<column name="id" length="40"/>
+		</id>
+		<property name="name" type="java.lang.String">
+			<column name="name" length="64"/>
+		</property>
+		<property name="platformTypeId" type="java.lang.String">
+			<column name="platform_type_id" length="32"/>
+		</property>
+		<property name="url" type="java.lang.String">
+			<column name="url" length="500"/>
+		</property>
+		<property name="port" type="java.lang.Integer">
+			<column name="port"/>
+		</property>
+		<property name="authInfo" type="java.lang.String">
+			<column name="auth_info" length="255"/>
+		</property>
+		<property name="description" type="java.lang.String">
+			<column name="description" length="255"/>
+		</property>
+	</class>
+</hibernate-mapping>

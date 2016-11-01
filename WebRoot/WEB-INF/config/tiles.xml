@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC 
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+       
+<tiles-definitions>
+	<definition name="baseLayout" template="/baseLayout.jsp">
+		<put-attribute name="title" value="Template"/>
+		<put-attribute name="header" value="/header.jsp" />
+		<put-attribute name="side" value="" />
+		<put-attribute name="body" value="/body.jsp" />
+		<put-attribute name="footer" value="/footer.jsp" />
+	</definition>
+	
+	<definition name="home" extends="baseLayout">
+		<put-attribute name="title" value="首页"/>
+		<put-attribute name="body" value="/home.jsp" />
+	</definition>
+	
+	<definition name="userList" extends="baseLayout">
+		<put-attribute name="title" value="user-list"/>
+		<put-attribute name="body" value="/administrator/list_user.jsp" />
+	</definition>
+	
+	<definition name="addUser" extends="baseLayout">
+		<put-attribute name="title" value="user-add"/>
+		<put-attribute name="body" value="/administrator/add_user.jsp" />
+	</definition>
+	
+	<definition name="modifyUser" extends="baseLayout">
+		<put-attribute name="title" value="user-modify"/>
+		<put-attribute name="body" value="/administrator/modify_user.jsp" />
+	</definition>
+	
+	<definition name="detailUser" extends="baseLayout">
+		<put-attribute name="title" value="user-detail"/>
+		<put-attribute name="body" value="/administrator/detail_user.jsp" />
+	</definition>
+	
+	<definition name="modifyPassword" extends="baseLayout">
+		<put-attribute name="title" value="user-password-modify"/>
+		<put-attribute name="body" value="/administrator/modify_password.jsp" />
+	</definition>
+	
+	<definition name="ecsOrderPage" extends="baseLayout">
+		<put-attribute name="title" value="ecs-order"/>
+		<put-attribute name="body" value="/order/ecs.jsp" />
+	</definition>
+	
+	<definition name="ecsResourceManage" extends="baseLayout">
+		<put-attribute name="title" value="ecs-manage"/>
+		<put-attribute name="body" value="/order/ecsmanage.jsp" />
+	</definition>
+</tiles-definitions>

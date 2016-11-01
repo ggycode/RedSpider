@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.spider.resource.model.BusinessResourceRelation" table="business_res_relation" >
+		<id name="uuid" type="java.lang.String">
+			<column name="uuid" length="40"/>
+		</id>
+		<property name="userId" type="java.lang.String">
+			<column name="user_id" length="40"/>
+		</property>
+		<property name="businessResId" type="java.lang.String">
+			<column name="business_res_id" length="255"/>
+		</property>
+		<property name="created" type="java.util.Date">
+			<column name="create_time"/>
+		</property>
+		<property name="updated" type="java.util.Date">
+			<column name="update_time"/>
+		</property>
+		<property name="removed" type="java.util.Date">
+			<column name="removed"/>
+		</property>
+	</class>
+</hibernate-mapping>
