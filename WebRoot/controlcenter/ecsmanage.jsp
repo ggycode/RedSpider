@@ -64,6 +64,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
            	 	alert(XMLHttpResponse);
             }
         });
+
+        $.ajax({
+			type: 'GET',
+            url: "resourceObj/ecs/describeInstances/"+g_user_id,
+            dataType: "text",
+            contentType:"application/json",
+            async: false,
+            success: function(data) {
+            },
+            error: function(XMLHttpResponse) {
+           	 	alert(XMLHttpResponse);
+            }
+        });
     }
     </script>
   </body>
