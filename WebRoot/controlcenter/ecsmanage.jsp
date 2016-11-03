@@ -16,10 +16,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
-
   </head>
   
   <body>
@@ -37,6 +33,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           <%--<li class="active">Data tables</li>--%>
         </ol>
       </section>
+      <!-- Main content -->
+  	  <section class="content">
+	    <div class="row">
+	       <div class="col-xs-12">
+	         <div class="box">
+	           <div class="box-header">
+	             
+	           </div><!-- /.box-header -->
+	         </div>
+	       </div>
+	    </div>
+	  </section>
       
       
     </div>
