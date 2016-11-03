@@ -20,7 +20,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
+    <div id="content-wrapper" class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
@@ -64,7 +64,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
            	 	alert(XMLHttpResponse);
             }
         });
+
+        $.ajax({
+			type: 'GET',
+            url: "resourceObj/ecs/describeInstances/"+g_user_id,
+            dataType: "text",
+            contentType:"application/json",
+            async: false,
+            success: function(data) {
+            },
+            error: function(XMLHttpResponse) {
+           	 	alert(XMLHttpResponse);
+            }
+        });
     }
+
+    function ControlManage(){
+		var self = this;
+     }
+
+	var controlManage = new ControlManage();   
+	ko.applyBindings(controlManage,$('div#content-wrapper')[0]); 
     </script>
   </body>
 </html>
