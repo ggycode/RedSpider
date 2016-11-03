@@ -20,7 +20,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
+    <div id="content-wrapper" class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
@@ -78,6 +78,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             }
         });
     }
+
+    function ControlManage(){
+		var self = this;
+     }
+
+	var controlManage = new ControlManage();   
+	ko.applyBindings(controlManage,$('div#content-wrapper')[0]); 
     </script>
   </body>
 </html>
