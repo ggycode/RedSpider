@@ -60,7 +60,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
     function ControlManage(){
 			var self = this;
-
      }
 
 	var controlManage = new ControlManage();   
