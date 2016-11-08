@@ -87,6 +87,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 	var controlManage = new ControlManage();   
 	ko.applyBindings(controlManage,$('div#content-wrapper')[0]); 
+	
+		function findEcsTable(){
+			
+		}
     </script>
   </body>
 </html>
