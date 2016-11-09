@@ -59,7 +59,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     }
 
     function ControlManage(){
-			var self = this;
+		var self = this;
+		self.resPool = ko.observable();
+		self.ecs_status = ko.observable();
      }
 
 	var controlManage = new ControlManage();   
