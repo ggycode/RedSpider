@@ -83,19 +83,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		var self = this;
 		self.resPool = ko.observable();
 		self.ecs_status = ko.observable();
-<<<<<<< HEAD
-=======
 		self.ecsResource = ko.observable();
->>>>>>> Feature_EcsQuery
      }
 
 	var controlManage = new ControlManage();   
 	ko.applyBindings(controlManage,$('div#content-wrapper')[0]); 
 	
-		function findEcsTable(){
-			
-		}
-		
 		function findEcsTable(){
 			
 		}
