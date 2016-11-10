@@ -92,6 +92,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		function findEcsTable(){
 			
 		}
+		function findEcsDetail(){
+			
+		}
     </script>
   </body>
 </html>
