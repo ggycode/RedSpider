@@ -52,6 +52,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     window.onload =function()
     {
         console.log("dafd");
+		alert("aaa");
         $.ajax({
 			type: 'GET',
             url: "resourcePool/find",
