@@ -47,7 +47,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">资源管理 <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                   <li><a href="#">控制中心概况</a></li>
-                  <li><a href="#">云主机管理</a></li>
+                  <li><a href="resource/ecs/manage/table">云主机管理</a></li>
                   <li><a href="#">开放存储管理</a></li>
                   <li><a href="#">分布式数据库管理</a></li>
                   <li><a href="#">关系型数据库管理</a></li>

@@ -16,15 +16,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
-
   </head>
   
   <body>
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
+    <div id="content-wrapper" class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
@@ -37,6 +33,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           <%--<li class="active">Data tables</li>--%>
         </ol>
       </section>
+      <!-- Main content -->
+  	  <section class="content">
+	    <div class="row">
+	       <div class="col-xs-12">
+	         <div class="box">
+	           <div class="box-header">
+	             
+	           </div><!-- /.box-header -->
+	         </div>
+	       </div>
+	    </div>
+	  </section>
       
       
     </div>
@@ -57,7 +65,37 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
            	 	alert(XMLHttpResponse);
             }
         });
+
+        $.ajax({
+			type: 'GET',
+            url: "resourceObj/ecs/describeInstances/"+g_user_id,
+            dataType: "text",
+            contentType:"application/json",
+            async: false,
+            success: function(data) {
+            },
+            error: function(XMLHttpResponse) {
+           	 	alert(XMLHttpResponse);
+            }
+        });
     }
+
+    function ControlManage(){
+		var self = this;
+		self.resPool = ko.observable();
+		self.ecs_status = ko.observable();
+		self.ecsResource = ko.observable();
+     }
+
+	var controlManage = new ControlManage();   
+	ko.applyBindings(controlManage,$('div#content-wrapper')[0]); 
+	
+		function findEcsTable(){
+			
+		}
+		function findEcsDetail(){
+			
+		}
     </script>
   </body>
 </html>
