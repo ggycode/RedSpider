@@ -21,6 +21,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <div style="width: 100%; line-height: 24px; color: #fff;">严禁在本站发布涉密文件及相关信息</div>
         <a style="position: relative;display: block; margin: 10px auto; border-radius: 15px !important; border: 1px solid #fff; width: 30px; height: 30px; line-height: 30px; text-align: center; color: #fff" class="fa fa-times" onclick="$('#shwoInfo').addClass('hide');"></a>
     </div>
+	<!-- HERE -->
     <div class="page-container" id="content">
 	    <div class="promo-block" id="promo-block">
 	      <div class="container">
