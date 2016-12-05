@@ -17,6 +17,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
+	<!-- 测试代码 -->
   	<div id = "shwoInfo" style="position: fixed; top: 50%; margin-top: -80px; background: #0f3773; border: 1px solid #fff; border-left: 0; border-top-right-radius: 10px !important; border-bottom-right-radius: 10px !important; padding: 10px; width: 80px; height: 160px; z-index: 999;">
         <div style="width: 100%; line-height: 24px; color: #fff;">严禁在本站发布涉密文件及相关信息</div>
         <a style="position: relative;display: block; margin: 10px auto; border-radius: 15px !important; border: 1px solid #fff; width: 30px; height: 30px; line-height: 30px; text-align: center; color: #fff" class="fa fa-times" onclick="$('#shwoInfo').addClass('hide');"></a>
